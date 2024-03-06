@@ -1,0 +1,337 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.orange{
+    color:orange;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+
+#hamburger{
+    display: none;
+}
+
+#hamburger-logo{
+    display: none;
+}
+
+.space{
+    width:80%;
+    margin: 0 auto;
+}
+.header{
+    width:100vw;
+    height: fit-content;
+    display: flex;
+
+    flex-direction: column;
+}
+
+.img-header{
+    filter:brightness(55%);
+    width: 100vw;
+    height: 215vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.search-icon{
+    background: url(search.svg) no-repeat center;
+    background-size: 88%;
+    width:30px;
+    height: 30px;
+}
+
+.line{
+    height: 3px;
+    background-color: white;
+    filter: invert(50%) ;
+    margin-top: 25px;
+ 
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 22px;
+    color: white;
+    margin-top: 107px;
+}
+
+.header-text{
+    color: white;
+    margin-top: 155px;
+    filter: invert(30%) ;
+
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+.title{
+    font-size: 4.4rem;
+    font-weight: bolder;
+}
+
+.presentation1{
+    width:330px;
+    margin-top: 35px;
+}
+
+.presentation2{
+    margin-top: 55px;
+}
+
+.gallery{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    
+}
+
+.gallery::after{
+    background: url(arrow.svg) no-repeat top;
+    background-size: 120%;
+    width:30px;
+    height: 90px;
+    margin-left: 20px;
+    content: "";
+}
+
+.tours{
+    display: flex;
+    width: 100vw;
+    padding-bottom: 100px;
+    flex-direction: column;
+    background-color: black;
+    padding-top:100px ;
+    box-shadow: 0px -29px 55px black;
+    color: white;
+}
+
+.tours-title, .about-title{
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+
+.tours-small-title{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0 80px 0;
+}
+
+.tours-img{
+    
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.tours-img img{
+    width: calc((100% - 60px) / 4);
+   border-radius: 10px;
+}
+
+.tours-img img:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.about{
+    width:100vw;
+    background-image: url(about.jpg);
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 120px;
+    box-shadow: inset 0em 2em 1.8em -1em rgb(46, 45, 45);
+   filter: drop-shadow(0px -20px 1.8em rgb(46, 45, 45))  ;
+}
+
+.about-title{
+    margin-top: 60px;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    margin: 100px auto 0 auto;
+}
+
+.about-text div{
+    width:40ch;
+    font-size: 13px;
+}
+
+.about-text div:nth-child(2){
+    margin-left: calc(40ch + 100px);
+}
+
+.about-text div:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 1.6px;
+    height: 150px;
+    margin:-23px 0 0 -50px  ;
+    filter: invert(50%) ;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100vw;
+    
+}
+
+
+@media screen  and (max-width:480px){
+    .about-text div:nth-child(2)::before{
+        
+        display: none;
+    }
+   
+
+    .about-text div{
+        width:35ch;
+        font-size: 13px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+    .tours-img{
+        flex-wrap: wrap;
+        column-gap:0;
+        
+    }
+
+    .presentation1,.gallery{
+        width: auto;
+    }
+
+    .tours-img img{
+        margin-bottom: 30px;
+        width: 100%;
+       border-radius: 10px;
+    }
+
+    .header-text{
+        text-align: center;
+    }
+}
+
+@media screen  and (max-width:580px){
+  
+    #hamburger-logo{
+        display:block;
+        position: absolute;
+        margin-left:calc(100vw - 50px);
+        margin-top: 10px;
+    }
+
+    
+    #hamburger:checked ~ .navbar {
+        
+        display: block;
+    }
+
+    .line{
+        display: none;
+    }
+
+    .nav{
+        display: flex;
+        row-gap: 20px;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .logo{
+        position: absolute;
+        margin-top: -20px;
+    }
+
+    .search-icon{
+        display: none;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+        height:100vh;
+        backdrop-filter: blur(10px);
+        background-color: transparent;
+        display: none;
+        margin-top: 30px;
+        width:100vw
+    }
+}
+
+@media screen  and (max-width:670px){
+    .about-text div:nth-child(2){
+        margin-left: 0;
+    }
+
+    .about-text div:nth-child(2)::after{
+        display: none;
+    }
+
+    .about-text div{
+        margin-bottom: 20px;
+    }  
+}
+
+@media screen  and (min-width:671px) and (max-width:751px) {
+    .about-text div{
+        width:35ch;
+        font-size: 13px;
+    }
+    .about-text div:nth-child(2){
+        margin-left: calc(35ch );
+    }
+
+    .about-text div:nth-child(2)::before{
+        
+        display: none;
+    }
+   
+}
+
+@media screen  and (min-width:481px) and (max-width:800px){
+    .tours-img{
+        flex-wrap: wrap;
+        
+    }
+    .tours-img img{
+        width: calc((100% - 30px) /2);
+       border-radius: 10px;
+       margin-bottom: 30px;
+    }
+
+    .navbar{
+        font-size: 15px;
+    }
+}
+
+
+
